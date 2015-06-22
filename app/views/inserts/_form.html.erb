@@ -1,0 +1,225 @@
+<%= form_for(@insert) do |f| %>
+  <% if @insert.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@insert.errors.count, "error") %> prohibited this insert from being saved:</h2>
+
+      <ul>
+      <% @insert.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :insertid %><br>
+    <%= f.number_field :insertid %>
+  </div>
+  <div class="field">
+    <%= f.label :inserttypecode %><br>
+    <%= f.text_field :inserttypecode %>
+  </div>
+  <div class="field">
+    <%= f.label :pubcode %><br>
+    <%= f.text_field :pubcode %>
+  </div>
+  <div class="field">
+    <%= f.label :positioncode %><br>
+    <%= f.text_field :positioncode %>
+  </div>
+  <div class="field">
+    <%= f.label :paperstockid %><br>
+    <%= f.number_field :paperstockid %>
+  </div>
+  <div class="field">
+    <%= f.label :methodid %><br>
+    <%= f.number_field :methodid %>
+  </div>
+  <div class="field">
+    <%= f.label :subtypeid %><br>
+    <%= f.number_field :subtypeid %>
+  </div>
+  <div class="field">
+    <%= f.label :createdby %><br>
+    <%= f.number_field :createdby %>
+  </div>
+  <div class="field">
+    <%= f.label :updatedby %><br>
+    <%= f.number_field :updatedby %>
+  </div>
+  <div class="field">
+    <%= f.label :adstatuscode %><br>
+    <%= f.text_field :adstatuscode %>
+  </div>
+  <div class="field">
+    <%= f.label :adstatusfursncode %><br>
+    <%= f.text_field :adstatusfursncode %>
+  </div>
+  <div class="field">
+    <%= f.label :advacct %><br>
+    <%= f.number_field :advacct %>
+  </div>
+  <div class="field">
+    <%= f.label :pressrunlonumber %><br>
+    <%= f.number_field :pressrunlonumber %>
+  </div>
+  <div class="field">
+    <%= f.label :stagecode %><br>
+    <%= f.text_field :stagecode %>
+  </div>
+  <div class="field">
+    <%= f.label :colorcode %><br>
+    <%= f.text_field :colorcode %>
+  </div>
+  <div class="field">
+    <%= f.label :packagenumber %><br>
+    <%= f.number_field :packagenumber %>
+  </div>
+  <div class="field">
+    <%= f.label :issuedate %><br>
+    <%= f.date_select :issuedate %>
+  </div>
+  <div class="field">
+    <%= f.label :productline %><br>
+    <%= f.text_field :productline %>
+  </div>
+  <div class="field">
+    <%= f.label :materialdesc %><br>
+    <%= f.text_field :materialdesc %>
+  </div>
+  <div class="field">
+    <%= f.label :batchnumber %><br>
+    <%= f.number_field :batchnumber %>
+  </div>
+  <div class="field">
+    <%= f.label :width %><br>
+    <%= f.number_field :width %>
+  </div>
+  <div class="field">
+    <%= f.label :height %><br>
+    <%= f.number_field :height %>
+  </div>
+  <div class="field">
+    <%= f.label :pages %><br>
+    <%= f.number_field :pages %>
+  </div>
+  <div class="field">
+    <%= f.label :perccircb %><br>
+    <%= f.number_field :perccircb %>
+  </div>
+  <div class="field">
+    <%= f.label :adlinage %><br>
+    <%= f.number_field :adlinage %>
+  </div>
+  <div class="field">
+    <%= f.label :psreceiveddate %><br>
+    <%= f.date_select :psreceiveddate %>
+  </div>
+  <div class="field">
+    <%= f.label :erop %><br>
+    <%= f.number_field :erop %>
+  </div>
+  <div class="field">
+    <%= f.label :waitlistheld %><br>
+    <%= f.text_field :waitlistheld %>
+  </div>
+  <div class="field">
+    <%= f.label :billedby %><br>
+    <%= f.text_field :billedby %>
+  </div>
+  <div class="field">
+    <%= f.label :eionumber %><br>
+    <%= f.text_field :eionumber %>
+  </div>
+  <div class="field">
+    <%= f.label :cncldbysalesrep %><br>
+    <%= f.text_field :cncldbysalesrep %>
+  </div>
+  <div class="field">
+    <%= f.label :regional %><br>
+    <%= f.text_field :regional %>
+  </div>
+  <div class="field">
+    <%= f.label :cancelledbyuser %><br>
+    <%= f.number_field :cancelledbyuser %>
+  </div>
+  <div class="field">
+    <%= f.label :fursndate %><br>
+    <%= f.date_select :fursndate %>
+  </div>
+  <div class="field">
+    <%= f.label :transtimefrom %><br>
+    <%= f.time_select :transtimefrom %>
+  </div>
+  <div class="field">
+    <%= f.label :transtimeto %><br>
+    <%= f.time_select :transtimeto %>
+  </div>
+  <div class="field">
+    <%= f.label :transdateto %><br>
+    <%= f.date_select :transdateto %>
+  </div>
+  <div class="field">
+    <%= f.label :overruns %><br>
+    <%= f.text_field :overruns %>
+  </div>
+  <div class="field">
+    <%= f.label :insertnotes %><br>
+    <%= f.text_area :insertnotes %>
+  </div>
+  <div class="field">
+    <%= f.label :materialinmclean %><br>
+    <%= f.text_field :materialinmclean %>
+  </div>
+  <div class="field">
+    <%= f.label :exclusive %><br>
+    <%= f.text_field :exclusive %>
+  </div>
+  <div class="field">
+    <%= f.label :schedulernotes %><br>
+    <%= f.text_field :schedulernotes %>
+  </div>
+  <div class="field">
+    <%= f.label :transdate %><br>
+    <%= f.date_select :transdate %>
+  </div>
+  <div class="field">
+    <%= f.label :prepressworkid %><br>
+    <%= f.number_field :prepressworkid %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br>
+    <%= f.number_field :weight %>
+  </div>
+  <div class="field">
+    <%= f.label :editorialspace %><br>
+    <%= f.number_field :editorialspace %>
+  </div>
+  <div class="field">
+    <%= f.label :projruncode %><br>
+    <%= f.text_field :projruncode %>
+  </div>
+  <div class="field">
+    <%= f.label :projdblsect %><br>
+    <%= f.text_field :projdblsect %>
+  </div>
+  <div class="field">
+    <%= f.label :straightcollect %><br>
+    <%= f.text_field :straightcollect %>
+  </div>
+  <div class="field">
+    <%= f.label :sectionname %><br>
+    <%= f.text_field :sectionname %>
+  </div>
+  <div class="field">
+    <%= f.label :allprintsites %><br>
+    <%= f.text_field :allprintsites %>
+  </div>
+  <div class="field">
+    <%= f.label :printsiteready %><br>
+    <%= f.text_field :printsiteready %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

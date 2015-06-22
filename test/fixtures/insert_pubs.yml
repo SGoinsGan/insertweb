@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pub_code: MyString
+  pub_name: MyString
+  ams_pub_code: MyString
+  cci_product: MyString
+  cci_zone: MyString
+  cci_edition: MyString
+  text_active: MyString
+  page_format_id: 1
+  active: 1
+  create_by: MyString
+  updated_by: MyString
+
+two:
+  pub_code: MyString
+  pub_name: MyString
+  ams_pub_code: MyString
+  cci_product: MyString
+  cci_zone: MyString
+  cci_edition: MyString
+  text_active: MyString
+  page_format_id: 1
+  active: 1
+  create_by: MyString
+  updated_by: MyString

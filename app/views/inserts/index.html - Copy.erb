@@ -1,0 +1,66 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Insert Calendar</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Insertid</th>
+      <th>Inserttypecode</th>
+      <th>Pubcode</th>      
+      <th>Adstatuscode</th>      
+      <th>Advacct</th>     
+      <th>Issuedate</th>      
+      <th>Width</th>
+      <th>Height</th>
+      <th>Pages</th>      
+      <th>Adlinage</th>
+      <th>Psreceiveddate</th>
+      <th>Erop</th>          
+      <th>Insertnotes</th>      
+      <th>Exclusive</th>      
+      <th>Weight</th>
+      <th>Updated</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @inserts.each do |insert| %>	
+<p>	
+      <tr>	 
+        <td><%= insert.insertid %></td>
+        <td><%= insert.inserttypecode %></td>
+        <td><%= insert.pubcode %></td>        
+        <td><%= insert.adstatuscode %></td>        
+        <td><%= insert.advacct %></td>        
+        <td><%= insert.issuedate %></td> 
+		
+        <td><%= insert.width %></td>
+        <td><%= insert.height %></td>
+        <td><%= insert.pages %></td>       
+        <td><%= insert.adlinage %></td>
+        <td><%= insert.psreceiveddate %></td>
+        <td><%= insert.erop %></td>
+        <td><%= insert.waitlistheld %></td>        
+        <td><%= insert.updated_at %></td>  		
+        <td><%= insert.insertnotes %></td>        
+        <td><%= insert.weight %></td>        
+        <td><%= insert.allprintsites %></td>       		
+        <td><%= link_to 'Print Site Response', insert %></td>		
+        <td><%= link_to 'Edit', edit_insert_path(insert) %></td>
+        <td><%= link_to 'Destroy', insert, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		 
+      </tr>
+	  
+	  </p>
+	   
+    <% end %>
+	
+  </tbody>
+  
+</table>
+
+<br>
+
+<%= link_to 'New Insert', new_insert_path %>

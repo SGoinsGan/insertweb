@@ -1,0 +1,10 @@
+<%= form_tag("/inserts", :method => "get") do %>
+<p> 
+  <%= text_field_tag :search, params[:search] %>
+  
+  
+  
+  <%= submit_tag "Search", :name => nil %>
+  <%= collection_select( :InsertPub, :id, InsertPub.all, :id, :pub_code, {}, { :multiple => false})   %>
+</p>
+<% end %> 

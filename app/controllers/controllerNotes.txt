@@ -1,0 +1,28 @@
+class InsertsController < ApplicationController
+  before_action :set_insert, only: [:show, :edit, :update, :destroy]
+
+  
+  def index
+    #if params[:search]	
+     # @inserts = Insert.where(pubcode: params[:search])	 
+   # else
+    #  @inserts = Insert.all
+   # end
+    
+    #if params[:search]
+	  #@inserts = Insert.find(:all, :conditions => ['name LIKE ?', "%#{params[:search]}%"])	  
+	#else
+	  #@inserts = Insert.find(:all)
+	  #end
+   # @inserts = Insert.all
+	  @inserts = Insert.all
+  if params[:search]
+    @inserts = Insert.search(params[:search]).order("created_at DESC")
+  else
+    @inserts = Insert.all.order('created_at DESC')	
+  end
+  
+  
+  def inserts
+  @insert = Insert.search(params[:timePeriod], params[:issue], params[:issue])
+end

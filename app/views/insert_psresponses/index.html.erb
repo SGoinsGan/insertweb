@@ -1,0 +1,179 @@
+
+<h1 style="color:white;background-color:#999999">Circulation Draw</h1>
+<p style="color:blue;text-align:right;font-size:110%;font-family:arial "><strong><%= link_to 'Insert Calendar', inserts_path %></strong></p>
+
+<hr size="1" color="lightcoral"/>
+
+<body style="background: #fcfcfc;" >
+<table width="600" cellspacing="3">
+ <tr>
+   <td style="text-align:right">InsertID: </td><td bgcolor="#e5e5e5"><b><%= @InsertID %></b></td>
+   <td style="text-align:right">Advertiser Name: </td><td bgcolor="#e5e5e5"><b><%= @Advertiser %></b></td>
+ </tr> 
+ <tr>
+   <td></td><td></td>
+   
+ </tr> 
+ <tr>  
+   <td style="text-align:right">Scheduled Insert Date: </td><td bgcolor="#e5e5e5"><b><%= @IssueDate %></b></td>
+   <td style="text-align:right">Issue Type: </td><td bgcolor="#e5e5e5"><b><%= @Inserttype %></b></td>
+      
+ </tr>
+ 
+</table> 
+
+<hr size="1" color="lightcoral"/>
+<!--<hr class="vertical"/>-->
+<!--<div style="border-left:medium #990033 solid; height:300px;" />-->
+<!--<div style="border-left:medium #990033 solid; position:absolute; left:150px; height:300px;" />-->
+  <!--<%= @Printsite %>-->
+  
+   
+  
+<% for insert_psresponse in @insert_psresponses %>
+<% end %>
+<% for insert_pspostresponse in @insert_pspostresponses %>
+<% end %>  
+<% for insert_condition in @insert_conditions %>
+<% end %>
+<table width="1220" cellspacing="3">
+ 
+ 
+ 
+  <tr>
+    <th style="text-align:right;font-size:115%">Pre-Insert</th>
+	<th ></th>	
+	<th ></th>
+	<th style="text-align:right;font-size:115%">Post-Insert</th>
+	<th></th>
+	<th></th>
+  </tr>
+  <tr>
+    <th</th>
+	<td></td>
+	<th></th>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+    <th</th>
+	<td></td>
+	<th></th>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+    <th</th>
+	<td></td>
+	<th></th>
+	<td></td>
+	<td></td>
+  </tr>
+   <tr>
+    <th style="text-align:right">Print Site:</th>
+	<td style="color:lightcoral"><b><%= @Printsite %></b></td> 
+	<td></td>
+	<th style="text-align:right">Left Over:</th>
+	<td><%= text_field_tag "leftover", insert_pspostresponse.leftover, size: 5 %> This should be an accurate count.</td>
+	<td></td>
+  </tr>
+  <div style="border-left:medium #990033 solid; position:absolute; left:470px; height:399px;" />
+  
+  <tr>
+    <th style="text-align:right">Quantity Expected:</th>
+	<td><input type="text" name="" size="5" /></td>
+	<td></td>
+	<th style="text-align:right">Insert Condition:</th>
+	<td><%= collection_select(:InsertCondition, :id, InsertCondition.where(responsecode: 'AI') , :id, :conditionname, {}, { :multiple => false})   %></td>
+	<td></td>
+  </tr>
+  <tr>
+    <th style="text-align:right">Quantity Received:</th>
+	<td><%= text_field_tag "quantityrec", insert_psresponse.quantityrec, size: 5 %> 
+	<td></td>
+	<th style="text-align:right">Notes:</th>
+	<td><%= text_area_tag "postnote", insert_pspostresponse.postnote, rows: 3, cols: 60 %></textarea></td>
+	<td></td>
+  </tr>
+  
+  <tr>
+    <th style="text-align:right">Date Received:</th>
+	<td><%= date_field_tag "receiveddate", insert_psresponse.receiveddate %></td>
+	<td></td>
+	<th style="text-align:right">Late trucks as a result of inserts:</th>
+	<td><%= text_field_tag "latetrucks", insert_pspostresponse.latetrucks, size: 3 %></td>
+	<td></td>
+  </tr>
+  <tr>
+    <th style="text-align:right">Insert Condition:</th>
+	<td><%= collection_select(:InsertCondition, :id, InsertCondition.where(responsecode: 'BI') , :id, :conditionname) %></td>
+	<!--<td><%= select_tag :InsertCondition, options_from_collection_for_select(InsertCondition.where(responsecode: 'BI'), :id, :conditionname, params[:condID]), include_blank: false %></td>-->
+		
+	<!--<td><%= text_field_tag "conditionname", insert_condition.conditionname %></td>-->
+	
+	<!--<td><%= collection_select(:InsertCondition, :id, InsertCondition.all, :id, :conditionname, {}, { :multiple => false})   %></td>-->
+	<td></td>
+	<th style="text-align:right"></th>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+    <th style="text-align:right">Receiver Name:</th>
+	<td><%= text_field_tag "receivedby", insert_psresponse.receivedby, size: 25 %></td>
+	<td></td>
+	<th style="text-align:right"></th>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+    <th style="text-align:right">Notes:</th>
+	<td><%= text_area_tag "receivednote", insert_psresponse.receivednote, rows: 8, cols: 36 %></textarea></td>
+	<td></td>
+	<th style="text-align:right"></th>
+	<td></td>
+	<td></td>
+  </tr>
+</table> 
+
+
+<p align="center"><input type="submit" name="" value="Submit" /></p>
+
+
+
+
+      		 
+	 
+</body>  
+
+<footer>
+
+  <footer style="background: #808080;">
+  <h3 style="color: white" align="right" >2015 Gannett </h3>
+</footer>
+
+
+
+
+  <!--<tbody>
+    <% @insert_psresponses.each do |insert_psresponse| %>
+      <tr>
+	  
+        <td><%= insert_psresponse.lookupid %></td>
+        <td><%= insert_psresponse.insertid %></td>
+        <td><%= insert_psresponse.receiveddate %></td>
+        <td><%= insert_psresponse.conditionid %></td>
+        <td><%= insert_psresponse.quantityrec %></td>
+        <td><%= insert_psresponse.receivednote %></td>
+        <td><%= insert_psresponse.receivedby %></td>
+        <td><%= insert_psresponse.updatedby %></td>
+        <td><%= link_to 'Show', insert_psresponse %></td>
+        <td><%= link_to 'Edit', edit_insert_psresponse_path(insert_psresponse) %></td>
+        <td><%= link_to 'Destroy', insert_psresponse, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Insert psresponse', new_insert_psresponse_path %>-->

@@ -1,0 +1,65 @@
+<%= form_for(@insert_pub) do |f| %>
+  <% if @insert_pub.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@insert_pub.errors.count, "error") %> prohibited this insert_pub from being saved:</h2>
+
+      <ul>
+      <% @insert_pub.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :pub_code %><br>
+    <%= f.text_field :pub_code %>
+  </div>
+  <div class="field">
+     <%= f.label "Pub", class: 'control-label' %>
+	<%= f.select(:pub_code, options_for_select([['Pub1', 'USA'], ['Pub2', 'USI']]))%>
+  </div>
+  <div class="field">
+    <%= f.label :pub_name %><br>
+    <%= f.text_field :pub_name %>
+  </div>
+  <div class="field">
+    <%= f.label :ams_pub_code %><br>
+    <%= f.text_field :ams_pub_code %>
+  </div>
+  <div class="field">
+    <%= f.label :cci_product %><br>
+    <%= f.text_field :cci_product %>
+  </div>
+  <div class="field">
+    <%= f.label :cci_zone %><br>
+    <%= f.text_field :cci_zone %>
+  </div>
+  <div class="field">
+    <%= f.label :cci_edition %><br>
+    <%= f.text_field :cci_edition %>
+  </div>
+  <div class="field">
+    <%= f.label :text_active %><br>
+    <%= f.text_field :text_active %>
+  </div>
+  <div class="field">
+    <%= f.label :page_format_id %><br>
+    <%= f.number_field :page_format_id %>
+  </div>
+  <div class="field">
+    <%= f.label :active %><br>
+    <%= f.number_field :active %>
+  </div>
+  <div class="field">
+    <%= f.label :create_by %><br>
+    <%= f.text_field :create_by %>
+  </div>
+  <div class="field">
+    <%= f.label :updated_by %><br>
+    <%= f.text_field :updated_by %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

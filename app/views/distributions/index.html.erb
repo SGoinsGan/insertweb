@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Distributions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Lookup</th>
+      <th>Level number</th>
+      <th>Distribution code</th>
+      <th>Description</th>
+      <th>Newspaper name</th>
+      <th>Parent lookup</th>
+      <th>Sort</th>
+      <th>Text active</th>
+      <th>Active date</th>
+      <th>Inactive date</th>
+      <th>Pub</th>
+      <th>Parent</th>
+      <th>Acitve</th>
+      <th>Created at</th>
+      <th>Updated at</th>
+      <th>Created by</th>
+      <th>Updated by</th>
+      <th>Address</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @distributions.each do |distribution| %>
+      <tr>
+        <td><%= distribution.lookup_id %></td>
+        <td><%= distribution.level_number %></td>
+        <td><%= distribution.distribution_code %></td>
+        <td><%= distribution.description %></td>
+        <td><%= distribution.newspaper_name %></td>
+        <td><%= distribution.parent_lookup_id %></td>
+        <td><%= distribution.sort %></td>
+        <td><%= distribution.text_active %></td>
+        <td><%= distribution.active_date %></td>
+        <td><%= distribution.inactive_date %></td>
+        <td><%= distribution.pub_id %></td>
+        <td><%= distribution.parent_id %></td>
+        <td><%= distribution.acitve %></td>
+        <td><%= distribution.created_at %></td>
+        <td><%= distribution.updated_at %></td>
+        <td><%= distribution.created_by %></td>
+        <td><%= distribution.updated_by %></td>
+        <td><%= distribution.address %></td>
+        <td><%= link_to 'Show', distribution %></td>
+        <td><%= link_to 'Edit', edit_distribution_path(distribution) %></td>
+        <td><%= link_to 'Destroy', distribution, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Distribution', new_distribution_path %>

@@ -1,0 +1,23 @@
+<h1>Testing pub display</h1>
+
+<%= form_for(@insert_pub) do |f| %><br /><br /><br /><br />
+
+    <div class="field" > 
+     <%= f.label "Pub:", class: 'control-label' %>
+	 <%= collection_select( :InsertPub, :id, InsertPub.all, :id, :pub_code, {}, { :multiple => false})   %>
+    </div>
+	<br />
+	<tr>
+       <td><label>From: </label></td><td><%= date_field(:fromdate, :fromissue_date) %></td>
+	   <td></td><td></td><td><label>To: </label></td><td><%= date_field(:todate, :toissue_date) %></td>	   
+    </tr>
+	
+	
+	<input type="submit" name="commit" value="Submit" />
+  
+ <br /><br /><br /><br /><br /><br /> 
+
+<% end %>
+
+<%= link_to 'Show', @insert_pub %> |
+<%= link_to 'Back', insert_pubs_path %>

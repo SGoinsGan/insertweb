@@ -1,0 +1,21 @@
+<%= form_for(@insert_printmethod) do |f| %>
+  <% if @insert_printmethod.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@insert_printmethod.errors.count, "error") %> prohibited this insert_printmethod from being saved:</h2>
+
+      <ul>
+      <% @insert_printmethod.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :methodname %><br>
+    <%= f.text_field :methodname %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

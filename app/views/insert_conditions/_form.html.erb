@@ -1,0 +1,25 @@
+<%= form_for(@insert_condition) do |f| %>
+  <% if @insert_condition.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@insert_condition.errors.count, "error") %> prohibited this insert_condition from being saved:</h2>
+
+      <ul>
+      <% @insert_condition.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :conditionname %><br>
+    <%= f.text_field :conditionname %>
+  </div>
+  <div class="field">
+    <%= f.label :responsecode %><br>
+    <%= f.text_field :responsecode %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

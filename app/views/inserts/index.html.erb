@@ -1,0 +1,133 @@
+
+ 
+<header style="background: #999999;" >
+  <h1 style="color: white">Insert Calendar </h1>
+</header>
+
+<br />
+
+<%= form_tag("/inserts", :method => "get") do %>
+<table>
+ <tr>
+  <td style="text-align:right"><%= label_tag 'Pub:' %></td>
+  <!--<%= text_field_tag :search, params[:search] %><br /><br />-->
+   
+  <td><%= select_tag :search, options_from_collection_for_select(InsertPub.all, :pub_code, :pub_code, params[:search]), include_blank: false %></td>
+ </tr>  
+<tr>
+  <td style="text-align:right"><%= label_tag 'From:' %></td>  
+  <td><input type="text", name="txtFromDate", id="txtFromDate" /></td>
+  
+  <td style="text-align:right"><%= label_tag 'To:' %></td>  
+  <td><input type="text", name="txtToDate", id="txtToDate" /></td> 
+  
+  <!--<td><%= date_field_tag :issuedate1, params[:issuedate1] %></td>-->  
+  <!--<td><%= text_field_tag :txtFromDate, params[:txtFromDate] %></td>-->
+  <!--<td><%= date_field_tag :issuedate2, params[:issuedate2] %></td>-->  
+  <!--<td><%= text_field_tag :txtToDate, params[:txtToDate] %></td>-->
+</tr>
+<tr>
+ <td></td>
+ <td> <%= submit_tag "Search", :name => nil %></td>
+</tr>  
+</table>
+<% end %>
+
+<body style="background: #fcfcfc;" ><br />
+<hr size="2" color="grey"/><hr size="2" color="grey"/>
+   
+<% @inserts.each do |insert| %>
+
+<% for distribution in @distributions %>
+<% end %>
+<% for insert_psresponse in @insert_psresponses %>
+<% end %>
+<% for insert_condition in @insert_conditions %>
+<% end %>
+
+<%= form_tag("/inserts", :method => "get") do %>
+<table>
+  <tr>    	
+	
+    <!--<%= text_field_tag :preinsertid, params[:preinsertid] %>-->
+	<!--<%= text_field_tag :psLookupid, params[:psLookupid] %>-->
+    <!--<%= text_field_tag :condID, params[:condID] %>--> 
+	
+	<!--<%= text_field_tag "distributioncode", distribution.distribution_code %>-->
+	<%= text_field_tag "psLookupId", distribution.lookup_id %>
+	<%= text_field_tag "preInsertId", insert.insertid %>	
+	
+   <!-- insert_psresponse.conditionid is used to retreive the condition name from insert_conditions   -->
+    <%= text_field_tag "condID", insert_psresponse.conditionid %>
+	
+  </tr>
+  <tr>
+    <td></td>
+    <td> <%= submit_tag "GetInsertInfo" %></td>
+  </tr>
+</table>
+<% end %>
+
+	
+<table>
+  <tr>
+	<td></td><td bgcolor="#cdb79e"><strong><%= distribution.description %></strong></td><td></td><td style="color:blue"><strong><%= insert_condition.conditionname %></strong></td>	
+  </tr>
+  
+  <tr>	   
+       <td></td><td><label>Pubcode:</label></td><td><strong><%= insert.pubcode %></strong></td>
+	   <td></td><td></td><td><label>Print Site Received Date:</label></td><td><strong><%= insert.psreceiveddate %></strong></td>
+	   <td></td><td><label>Updated:</label></td><td><strong><%= insert.updated_at %></strong></td>
+    </tr>
+	
+	<tr>
+       <td></td><td><label>Type:</label></td><td><strong><%= insert.inserttypecode %></strong></td>
+    </tr>	 
+     
+	<tr>
+	  <td></td><td><label>Run:</label></td><td><strong><%= insert.issuedate %></strong></td>
+	  <td><label>#PP:</label></td><td><strong><%= insert.pages %></strong></td>
+	  <td></td><td></td><td><label>Status:</label></td><td><strong><%= insert.adstatuscode %></strong></td>
+	</tr>  
+	
+	<tr>
+	  <td></td><td><label>Advertiser:</label></td><td><strong><%= insert.advacct %></strong></td>
+	  <td><label>Ad Lineage:</label></td><td><strong><%= insert.adlinage %></strong></td>
+	  <td></td><td></td><td><label>EROP:</label></td><td><strong><%= insert.erop %></strong></td>	   
+	</tr> 
+
+	<tr>
+	  <td></td><td><label>Insert#:</label></td><td><strong><%= insert.insertid %></strong></td>
+	  <td><label>Width:</label></td><td><strong><%= insert.width %></strong></td>
+	  <td></td><td></td><td><label>Height:</label></td><td><strong><%= insert.height %></strong></td> 	 
+	</tr>
+	
+	<tr>
+	  <td></td><td><label>Sites:</label></td><td><label>Print site string goes here...</label></td>	 
+	  <td></td><td></td><td></td><td></td><td><label>Weight:</label></td><td><strong><%= insert.weight %></strong></td>	  
+	</tr>
+	
+	<tr>
+	  <td></td><td><label>Notes:</label></td><td><strong><%= insert.insertnotes %></strong></td>	   	 
+	</tr>
+    
+	 
+	<tr> 
+	<% if insert.inserttypecode == "FSI" || insert.inserttypecode == "PROMO" || insert.inserttypecode == "SASI" %>
+      <td><p style="text-align:left;font-size:110%"><strong><%= link_to 'Print Site Response', insert_psresponses_path(:InsertID => insert.insertid, :IssueDate => insert.issuedate, :Printsite => distribution.description, :Inserttype => insert.inserttypecode, :condName => insert_condition.conditionname ,:Advertiser => insert.advacct), {:style=>'color:#990033;', :class => "css_class"} %></strong></td>
+    <% end %>
+
+    </table> 
+	  
+	<hr size="3" color="grey"/>
+    <% end %>
+	
+</body>
+<footer>
+  <footer style="background: #808080;">
+  <h3 style="color: white" align="right" >2015 Gannett </h3>
+
+</footer>
+
+
+

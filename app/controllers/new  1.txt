@@ -1,0 +1,128 @@
+<% for user in @users %>
+<% end %>
+<% @users.each do |user| %>
+  <tr>
+    <!--<td><%= user.username %></td>
+    <td><%= user.printsitename %></td>
+    <td><%= user.printsitecode %></td>
+    <td><%= user.id %></td>-->
+  </tr>
+<% end %>
+<% for distribution in @distributions %>
+<% end %>
+
+<% @DISTRIBUTIONS.EACH DO |DISTRIBUTION| %>
+  <TR>
+    <!--<TD><%= DISTRIBUTION.LOOKUP_ID %></TD> 
+    <TD><%= DISTRIBUTION.DESCRIPTION %></TD>--> 	  
+  </TR>
+<% END %>
+
+<% for insert_psresponse in @insert_psresponses %>
+<% end %>
+<% @insert_psresponses.each do |insert_psresponse| %>
+    <tr>
+      <!--<td><%= insert_psresponse.conditionid %></td>-->      	  
+    </tr>
+<% end %>
+<% for insert_condition in @insert_conditions %>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////
+
+line 62
+<%= form_tag("/inserts", :method => "get") do %>
+<table>
+  <tr>  
+    <!-- parameter for print site name -->
+    <%= text_field_tag "psname", user.printsitecode %><%= user.username %><%= user.printsitename %>
+	
+	<!-- parameters for the psresponse condition -->
+    <!--<%= text_field_tag :preinsertid, params[:preinsertid] %>-->
+	<!--<%= text_field_tag :psLookupid, params[:psLookupid] %>-->
+    <!--<%= text_field_tag :condID, params[:condID] %>--> 
+	
+	<%= text_field_tag "preinsertid", insert.insertid %>
+    <%= text_field_tag "psLookupid", distribution.lookup_id %>
+    <%= text_field_tag "condID", insert_psresponse.conditionid %>
+  </tr>
+  <tr>
+    <td></td>
+    <td> <%= submit_tag "GetInsertInfo", :name => nil %></td>
+  </tr>
+</table>
+<% end %>
+
+///////////////////
+
+<% for distribution in @distributions %>
+<% end %>
+<% for insert_psresponse in @insert_psresponses %>
+<% end %>
+<% for insert_condition in @insert_conditions %>
+<% end %>
+<% for user in @users %>
+<% end %>
+
+////////////////////
+
+/////
+<%= user.printsitecode %> --------------
+<% @distributions.each do |distribution| %>
+    <tr>
+      <td><%= distribution.lookup_id %></td>
+      10<%= text_field_tag "psLookupid", distribution.lookup_id %>	  
+    </tr>
+<% end %>
+
+<% @insert_psresponses.each do |insert_psresponse| %>
+    <tr>
+      <td><%= insert_psresponse.conditionid %></td>
+      20<%= text_field_tag "condID", insert_psresponse.conditionid %>	  
+    </tr>
+<% end %>
+
+<% @insert_conditions.each do |insert_condition| %>
+    <tr>
+      <td><%= insert_psresponse.conditionid %></td>
+      30<%= text_field_tag "condID", insert_psresponse.conditionid %>	  
+    </tr>
+<% end %>
+
+
+//////////////
+
+//////
+<% @users.each do |user| %>
+      <tr>
+        <td><%= user.username %></td>
+        <td><%= user.printsitename %></td>
+        <td><%= user.printsitecode %></td>
+        <td><%= user.id %></td>
+      </tr>
+    <% end %>
+
+
+//////

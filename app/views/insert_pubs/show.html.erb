@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pub code:</strong>
+  <%= @insert_pub.pub_code %>
+</p>
+
+<p>
+  <strong>Pub name:</strong>
+  <%= @insert_pub.pub_name %>
+</p>
+
+<p>
+  <strong>Ams pub code:</strong>
+  <%= @insert_pub.ams_pub_code %>
+</p>
+
+<p>
+  <strong>Cci product:</strong>
+  <%= @insert_pub.cci_product %>
+</p>
+
+<p>
+  <strong>Cci zone:</strong>
+  <%= @insert_pub.cci_zone %>
+</p>
+
+<p>
+  <strong>Cci edition:</strong>
+  <%= @insert_pub.cci_edition %>
+</p>
+
+<p>
+  <strong>Text active:</strong>
+  <%= @insert_pub.text_active %>
+</p>
+
+<p>
+  <strong>Page format:</strong>
+  <%= @insert_pub.page_format_id %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @insert_pub.active %>
+</p>
+
+<p>
+  <strong>Create by:</strong>
+  <%= @insert_pub.create_by %>
+</p>
+
+<p>
+  <strong>Updated by:</strong>
+  <%= @insert_pub.updated_by %>
+</p>
+
+<%= link_to 'Edit', edit_insert_pub_path(@insert_pub) %> |
+<%= link_to 'Back', insert_pubs_path %>

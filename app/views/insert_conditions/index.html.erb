@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Insert Conditions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Conditionname</th>
+      <th>Responsecode</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @insert_conditions.each do |insert_condition| %>
+      <tr>
+        <td><%= insert_condition.conditionname %></td>
+        <td><%= insert_condition.responsecode %></td>
+        <td><%= link_to 'Show', insert_condition %></td>
+        <td><%= link_to 'Edit', edit_insert_condition_path(insert_condition) %></td>
+        <td><%= link_to 'Destroy', insert_condition, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Insert condition', new_insert_condition_path %>

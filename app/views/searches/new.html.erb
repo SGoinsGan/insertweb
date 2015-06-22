@@ -1,0 +1,21 @@
+<h1>Insert Calendar</h1>
+
+<%= form_for @search do |f| %>
+  <div class="field">
+    <%= f.label :Pub %><br />
+	<%= f.collection_select(:pub, Search.all, :id, :pub, include_blank: false)   %>
+	
+  </div>
+  <div class="field">
+    <%= f.label :From %><br />
+	<%= f.date_field :fromdate   %>
+  </div>
+  <div class="field">
+    <%= f.label :To %><br />
+	<%= f.date_field :todate   %>
+  </div>
+  <div class="actions"><%= f.submit "Search" %></div>
+<% end %>  
+  
+  
+	

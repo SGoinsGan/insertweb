@@ -1,0 +1,49 @@
+<%= form_for(@insert_psresponse) do |f| %>
+  <% if @insert_psresponse.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@insert_psresponse.errors.count, "error") %> prohibited this insert_psresponse from being saved:</h2>
+
+      <ul>
+      <% @insert_psresponse.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :lookupid %><br>
+    <%= f.number_field :lookupid %>
+  </div>
+  <div class="field">
+    <%= f.label :insertid %><br>
+    <%= f.number_field :insertid %>
+  </div>
+  <div class="field">
+    <%= f.label :receiveddate %><br>
+    <%= f.date_select :receiveddate %>
+  </div>
+  <div class="field">
+    <%= f.label :conditionid %><br>
+    <%= f.number_field :conditionid %>
+  </div>
+  <div class="field">
+    <%= f.label :quantityrec %><br>
+    <%= f.number_field :quantityrec %>
+  </div>
+  <div class="field">
+    <%= f.label :receivednote %><br>
+    <%= f.text_area :receivednote %>
+  </div>
+  <div class="field">
+    <%= f.label :receivedby %><br>
+    <%= f.text_field :receivedby %>
+  </div>
+  <div class="field">
+    <%= f.label :updatedby %><br>
+    <%= f.text_field :updatedby %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

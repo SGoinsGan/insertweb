@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Conditionname:</strong>
+  <%= @insert_condition.conditionname %>
+</p>
+
+<p>
+  <strong>Responsecode:</strong>
+  <%= @insert_condition.responsecode %>
+</p>
+
+<%= link_to 'Edit', edit_insert_condition_path(@insert_condition) %> |
+<%= link_to 'Back', insert_conditions_path %>

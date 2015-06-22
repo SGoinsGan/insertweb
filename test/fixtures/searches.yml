@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pub: MyString
+  fromdate: 2015-04-19
+  todate: 2015-04-19
+
+two:
+  pub: MyString
+  fromdate: 2015-04-19
+  todate: 2015-04-19

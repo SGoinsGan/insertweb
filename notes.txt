@@ -1,0 +1,12 @@
+<% for distribution in @distributions %>
+<% end %>
+<% for insert_psresponse in @insert_psresponses %>
+<% end %>
+
+<% for insert_condition in @insert_conditions %>
+<% end %>
+
+<tr>
+	<td></td><td bgcolor="#cdb79e"><strong><%= distribution.description %></strong></td><td></td><td style="color:blue"><strong><%= insert_condition.conditionname %></strong></td>
+	<%= distribution.lookup_id %><%= insert_psresponse.conditionid %>
+  </tr>

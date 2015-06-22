@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Insert Pubs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pub code</th>
+      <th>Pub name</th>
+      <th>Ams pub code</th>
+      <th>Cci product</th>
+      <th>Cci zone</th>
+      <th>Cci edition</th>
+      <th>Text active</th>
+      <th>Page format</th>
+      <th>Active</th>
+      <th>Create by</th>
+      <th>Updated by</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  
+
+
+
+  <tbody>
+    <% @insert_pubs.each do |insert_pub| %>
+      <tr>	  
+	  
+	  	  
+        <td><%= insert_pub.pub_code %></td>
+        <td><%= insert_pub.pub_name %></td>
+        <td><%= insert_pub.ams_pub_code %></td>
+        <td><%= insert_pub.cci_product %></td>
+        <td><%= insert_pub.cci_zone %></td>
+        <td><%= insert_pub.cci_edition %></td>
+        <td><%= insert_pub.text_active %></td>
+        <td><%= insert_pub.page_format_id %></td>
+        <td><%= insert_pub.active %></td>
+        <td><%= insert_pub.create_by %></td>
+        <td><%= insert_pub.updated_by %></td>
+        <td><%= link_to 'Show', insert_pub %></td>
+        <td><%= link_to 'Edit', edit_insert_pub_path(insert_pub) %></td>
+        <td><%= link_to 'Destroy', insert_pub, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Insert pub', new_insert_pub_path %>

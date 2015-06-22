@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  insertid: 1
+  leftover: 1
+  postnote: MyString
+  updatedby: MyString
+  latetrucks: 1
+
+two:
+  insertid: 1
+  leftover: 1
+  postnote: MyString
+  updatedby: MyString
+  latetrucks: 1

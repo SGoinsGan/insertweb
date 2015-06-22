@@ -1,0 +1,4 @@
+json.array!(@inserts) do |insert|
+  json.extract! insert, :id, :insertid, :inserttypecode, :pubcode, :positioncode, :paperstockid, :methodid, :subtypeid, :createdby, :updatedby, :adstatuscode, :adstatusfursncode, :advacct, :pressrunlonumber, :stagecode, :colorcode, :packagenumber, :issuedate, :productline, :materialdesc, :batchnumber, :width, :height, :pages, :perccircb, :adlinage, :psreceiveddate, :erop, :waitlistheld, :billedby, :eionumber, :cncldbysalesrep, :regional, :cancelledbyuser, :fursndate, :transtimefrom, :transtimeto, :transdateto, :overruns, :insertnotes, :materialinmclean, :exclusive, :schedulernotes, :transdate, :prepressworkid, :weight, :editorialspace, :projruncode, :projdblsect, :straightcollect, :sectionname, :allprintsites, :printsiteready
+  json.url insert_url(insert, format: :json)
+end

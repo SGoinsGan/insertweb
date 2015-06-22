@@ -1,0 +1,129 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Inserts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Insertid</th>
+      <th>Inserttypecode</th>
+      <th>Pubcode</th>
+      <th>Positioncode</th>
+      <th>Paperstockid</th>
+      <th>Methodid</th>
+      <th>Subtypeid</th>
+      <th>Createdby</th>
+      <th>Updatedby</th>
+      <th>Adstatuscode</th>
+      <th>Adstatusfursncode</th>
+      <th>Advacct</th>
+      <th>Pressrunlonumber</th>
+      <th>Stagecode</th>
+      <th>Colorcode</th>
+      <th>Packagenumber</th>
+      <th>Issuedate</th>
+      <th>Productline</th>
+      <th>Materialdesc</th>
+      <th>Batchnumber</th>
+      <th>Width</th>
+      <th>Height</th>
+      <th>Pages</th>
+      <th>Perccircb</th>
+      <th>Adlinage</th>
+      <th>Psreceiveddate</th>
+      <th>Erop</th>
+      <th>Waitlistheld</th>
+      <th>Billedby</th>
+      <th>Eionumber</th>
+      <th>Cncldbysalesrep</th>
+      <th>Regional</th>
+      <th>Cancelledbyuser</th>
+      <th>Fursndate</th>
+      <th>Transtimefrom</th>
+      <th>Transtimeto</th>
+      <th>Transdateto</th>
+      <th>Overruns</th>
+      <th>Insertnotes</th>
+      <th>Materialinmclean</th>
+      <th>Exclusive</th>
+      <th>Schedulernotes</th>
+      <th>Transdate</th>
+      <th>Prepressworkid</th>
+      <th>Weight</th>
+      <th>Editorialspace</th>
+      <th>Projruncode</th>
+      <th>Projdblsect</th>
+      <th>Straightcollect</th>
+      <th>Sectionname</th>
+      <th>Allprintsites</th>
+      <th>Printsiteready</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @inserts.each do |insert| %>
+      <tr>
+        <td><%= insert.insertid %></td>
+        <td><%= insert.inserttypecode %></td>
+        <td><%= insert.pubcode %></td>
+        <td><%= insert.positioncode %></td>
+        <td><%= insert.paperstockid %></td>
+        <td><%= insert.methodid %></td>
+        <td><%= insert.subtypeid %></td>
+        <td><%= insert.createdby %></td>
+        <td><%= insert.updatedby %></td>
+        <td><%= insert.adstatuscode %></td>
+        <td><%= insert.adstatusfursncode %></td>
+        <td><%= insert.advacct %></td>
+        <td><%= insert.pressrunlonumber %></td>
+        <td><%= insert.stagecode %></td>
+        <td><%= insert.colorcode %></td>
+        <td><%= insert.packagenumber %></td>
+        <td><%= insert.issuedate %></td>
+        <td><%= insert.productline %></td>
+        <td><%= insert.materialdesc %></td>
+        <td><%= insert.batchnumber %></td>
+        <td><%= insert.width %></td>
+        <td><%= insert.height %></td>
+        <td><%= insert.pages %></td>
+        <td><%= insert.perccircb %></td>
+        <td><%= insert.adlinage %></td>
+        <td><%= insert.psreceiveddate %></td>
+        <td><%= insert.erop %></td>
+        <td><%= insert.waitlistheld %></td>
+        <td><%= insert.billedby %></td>
+        <td><%= insert.eionumber %></td>
+        <td><%= insert.cncldbysalesrep %></td>
+        <td><%= insert.regional %></td>
+        <td><%= insert.cancelledbyuser %></td>
+        <td><%= insert.fursndate %></td>
+        <td><%= insert.transtimefrom %></td>
+        <td><%= insert.transtimeto %></td>
+        <td><%= insert.transdateto %></td>
+        <td><%= insert.overruns %></td>
+        <td><%= insert.insertnotes %></td>
+        <td><%= insert.materialinmclean %></td>
+        <td><%= insert.exclusive %></td>
+        <td><%= insert.schedulernotes %></td>
+        <td><%= insert.transdate %></td>
+        <td><%= insert.prepressworkid %></td>
+        <td><%= insert.weight %></td>
+        <td><%= insert.editorialspace %></td>
+        <td><%= insert.projruncode %></td>
+        <td><%= insert.projdblsect %></td>
+        <td><%= insert.straightcollect %></td>
+        <td><%= insert.sectionname %></td>
+        <td><%= insert.allprintsites %></td>
+        <td><%= insert.printsiteready %></td>
+        <td><%= link_to 'Show', insert %></td>
+        <td><%= link_to 'Edit', edit_insert_path(insert) %></td>
+        <td><%= link_to 'Destroy', insert, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Insert', new_insert_path %>

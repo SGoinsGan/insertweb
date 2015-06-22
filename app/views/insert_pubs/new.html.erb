@@ -1,0 +1,10 @@
+<h1>Insert Calendar</h1>
+
+<%= form_for @insert_pub do |f| %>
+  <div class="field">
+    <%= f.label :Pub %><br />
+	<%= f.collection_select(:pub_code, InsertPub.all, :id, :pub_code, include_blank: false)   %><br /><br />
+	
+  
+  <div class="actions"><%= f.submit "Search" %></div>
+<% end %>  

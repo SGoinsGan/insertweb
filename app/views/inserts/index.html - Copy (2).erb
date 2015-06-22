@@ -1,0 +1,82 @@
+
+
+
+ 
+<header style="background: #999999;" >
+  <h1 style="color: white">Insert Calendar </h1>
+</header>
+<br /><br />
+
+
+    
+
+  <body style="background: #f5f5f5;" ><br /><br />
+  <hr size="1" color="lightcoral"/>
+  
+  
+  
+ 
+  
+ 
+    <% @inserts.each do |insert| %>
+	
+<table >	
+
+
+	<tr>
+       <td></td><td><label>Pubcode:</label></td><td><strong><%= insert.pubcode %></strong></td>
+	   <td></td><td></td><td><label>Print Site Received Date:</label></td><td><strong><%= insert.psreceiveddate %></strong></td>
+	   <td></td><td><label>Updated:</label></td><td><strong><%= insert.updated_at %></strong></td>
+    </tr>
+	
+	<tr>
+       <td></td><td><label>Type:</label></td><td><strong><%= insert.inserttypecode %></strong></td>
+    </tr>	 
+     
+	<tr>
+	  <td></td><td><label>Run:</label></td><td><strong><%= insert.issuedate %></strong></td>
+	  <td><label>#PP:</label></td><td><strong><%= insert.pages %></strong></td>
+	  <td></td><td></td><td><label>Status:</label></td><td><strong><%= insert.adstatuscode %></strong></td>
+	</tr>  
+	
+	<tr>
+	  <td></td><td><label>Advertiser:</label></td><td><strong><%= insert.advacct %></strong></td>
+	  <td><label>Ad Lineage:</label></td><td><strong><%= insert.adlinage %></strong></td>
+	  <td></td><td></td><td><label>EROP:</label></td><td><strong><%= insert.erop %></strong></td>	   
+	</tr> 
+
+	<tr>
+	  <td></td><td><label>Insert#:</label></td><td><strong><%= insert.insertid %></strong></td>
+	  <td><label>Width:</label></td><td><strong><%= insert.width %></strong></td>
+	  <td></td><td></td><td><label>Height:</label></td><td><strong><%= insert.height %></strong></td> 	 
+	</tr>
+	
+	<tr>
+	  <td></td><td><label>Sites:</label></td><td><label>Print site string goes here...</label></td>	 
+	  <td></td><td></td><td></td><td></td><td><label>Weight:</label></td><td><strong><%= insert.weight %></strong></td>	  
+	</tr>
+	
+	<tr>
+	  <td></td><td><label>Notes:</label></td><td><strong><%= insert.insertnotes %></strong></td>	   	 
+	</tr>
+	 
+    
+	<br /> 
+	<tr> 
+	
+    <td><strong><%= link_to 'Print Site Response', insert, {:style=>'color:#cc0000;', :class => "css_class"} %></strong></td>	
+      		 
+    </table> 
+	  
+	<hr size="3" color="grey"/>
+    <% end %>
+	
+</body>
+<footer>
+  <footer style="background: #808080;">
+  <h3 style="color: white" align="right" >2015 Gannett </h3>
+
+</footer>
+</footer>
+
+
